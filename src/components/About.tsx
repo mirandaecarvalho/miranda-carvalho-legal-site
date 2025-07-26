@@ -14,9 +14,9 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg font-formal leading-relaxed text-foreground">
-              Fundado em 2003, o <strong>Miranda e Carvalho Advocacia</strong> nasceu da união de dois profissionais 
-              apaixonados pela justiça e comprometidos com a excelência no atendimento jurídico. Ao longo de mais 
-              de duas décadas, construímos uma sólida reputação baseada na ética, transparência e resultados efetivos.
+              O escritório <strong>Miranda e Carvalho Advocacia</strong> foi criado em 2024 pelos advogados 
+              João Carvalho e Douglas Miranda, com a missão de oferecer um atendimento jurídico sério, 
+              humano e comprometido com a justiça.
             </p>
             
             <p className="text-lg font-formal leading-relaxed text-foreground">
