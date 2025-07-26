@@ -44,10 +44,10 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
     
-    /* Legal Site Specific Colors */
-    --legal-dark: 214 55% 18%; /* #1A223E */
-    --legal-light: 30 14% 95%; /* #F4F2F1 */
-    --legal-gold: 38 88% 55%;
+  /* Legal Site Specific Colors */
+  --legal-dark: 214 55% 18%; /* #1A223E */
+  --legal-light: 30 14% 95%; /* #F4F2F1 */
+  --legal-gold: 220 9% 46%; /* #6B7280 - Professional gray */
     
     /* Fonts */
     --font-heading: 'Playfair Display', serif; /* Similar to HARMONY */

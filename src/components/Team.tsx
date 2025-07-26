@@ -1,16 +1,16 @@
 import { Card } from '@/components/ui/card';
-import mirandaPhoto from '@/assets/lawyer-miranda.jpg';
-import carvalhoPhoto from '@/assets/lawyer-carvalho.jpg';
+import carvalhoPhoto from '/lovable-uploads/bc938d46-eb4a-4464-ad2a-430b6e8bd55f.png';
+import mirandaPhoto from '/lovable-uploads/2e04797f-901e-4f7c-a4bb-8ce46a0716d7.png';
 const teamMembers = [{
-  name: "Dr. João Miranda",
-  oab: "OAB/RJ 123456",
-  photo: mirandaPhoto,
-  description: "Sócio-fundador especializado em Direito Civil e Empresarial. Graduado pela UERJ com pós-graduação em Direito Processual Civil. Mais de 25 anos de experiência advocatícia."
-}, {
-  name: "Dra. Maria Carvalho",
-  oab: "OAB/RJ 789012",
+  name: "Dr. João Carvalho",
+  oab: "OAB/RJ 249638",
   photo: carvalhoPhoto,
-  description: "Sócia-fundadora especializada em Direito Penal e Trabalhista. Graduada pela UFRJ com mestrado em Ciências Criminais. Reconhecida expertise em defesa criminal."
+  description: "Sócio-fundador, especialista em Ciências Penais, Direitos Humanos e Movimentos Sociais. Graduado pela UNIFAA. Experiência em casos complexos como Tribunal do Júri, Sustentações Orais e Audiências concentradas. Presidente da Comissão de Direitos Humanos da 7ª Subseção da OAB/RJ e membro da Comissão de Direitos Humanos da Seccional do Rio de Janeiro."
+}, {
+  name: "Dr. Douglas Miranda",
+  oab: "OAB/RJ 254436",
+  photo: mirandaPhoto,
+  description: "Sócio-fundador, especialista em Ciências Penais, Direitos Humanos e Movimentos Sociais. Graduado pela UNIFAA. Experiência em casos complexos como Tribunal do Júri, Sustentações Orais e Audiências concentradas. Vice-presidente da Comissão de Direitos Humanos da 7ª Subseção da OAB/RJ e membro da Comissão de Direitos Humanos da Seccional do Rio de Janeiro."
 }];
 const Team = () => {
   return <section id="equipe" className="py-20 bg-background">

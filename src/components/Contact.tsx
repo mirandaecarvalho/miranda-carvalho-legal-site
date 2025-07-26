@@ -17,41 +17,66 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Validação básica
+    
+    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: "Erro no formulário",
+        title: "Erro",
         description: "Por favor, preencha todos os campos obrigatórios.",
-        variant: "destructive"
+        variant: "destructive",
       });
-      setIsSubmitting(false);
       return;
     }
 
-    // Validação de email
+    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
-        title: "Email inválido",
-        description: "Por favor, insira um email válido.",
-        variant: "destructive"
+        title: "Erro",
+        description: "Por favor, insira um e-mail válido.",
+        variant: "destructive",
       });
-      setIsSubmitting(false);
       return;
     }
 
-    // Simular envio (aqui você integraria com um backend real)
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    setIsSubmitting(true);
 
-    toast({
-      title: "Mensagem enviada com sucesso!",
-      description: "Entraremos em contato em breve. Obrigado!"
-    });
+    try {
+      // Create mailto link
+      const subject = encodeURIComponent('Contato via site - Miranda & Carvalho Advocacia');
+      const body = encodeURIComponent(
+        `Nome: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Telefone: ${formData.phone || 'Não informado'}\n\n` +
+        `Mensagem:\n${formData.message}`
+      );
+      
+      const mailtoLink = `mailto:mirandaecarvalho.advogados@gmail.com?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, '_self');
+      
+      toast({
+        title: "Redirecionando para o e-mail",
+        description: "Você será redirecionado para seu cliente de e-mail.",
+      });
 
-    setFormData({ name: '', email: '', phone: '', message: '' });
-    setIsSubmitting(false);
+      // Reset form after a brief delay
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      }, 1000);
+    } catch (error) {
+      toast({
+        title: "Erro",
+        description: "Erro ao abrir cliente de e-mail. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -80,7 +105,7 @@ const Contact = () => {
             <Card className="p-6 bg-card">
               <div className="flex items-start space-x-4">
                 <div className="bg-legal-gold rounded-full p-3">
-                  <svg className="w-6 h-6 text-legal-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-legal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -88,9 +113,10 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-playfair font-semibold text-legal-dark mb-2">Endereço</h3>
                   <p className="font-montserrat text-muted-foreground">
-                    Av. Rio Branco, 123 - Sala 1501<br />
-                    Centro - Rio de Janeiro/RJ<br />
-                    CEP: 20040-020
+                    Avenida Nilo Peçanha, 222, Sala 105<br />
+                    Centro, Valença - RJ<br />
+                    Shopping Reikin<br />
+                    CEP: 27660-246
                   </p>
                 </div>
               </div>
@@ -99,17 +125,18 @@ const Contact = () => {
             <Card className="p-6 bg-card">
               <div className="flex items-start space-x-4">
                 <div className="bg-legal-gold rounded-full p-3">
-                  <svg className="w-6 h-6 text-legal-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-legal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
                   <h3 className="text-lg font-playfair font-semibold text-legal-dark mb-2">Telefones</h3>
-                  <p className="font-montserrat text-muted-foreground">
-                    (21) 3233-4455<br />
-                    (21) 99876-5432<br />
-                    (21) 99123-4567
-                  </p>
+                  <div className="font-montserrat text-muted-foreground space-y-2">
+                    <p>(24) 98134-0717</p>
+                    <p>(24) 98104-2543</p>
+                    <p>(24) 98101-3461</p>
+                    <p>(24) 3206-5755</p>
+                  </div>
                 </div>
               </div>
             </Card>
@@ -117,15 +144,14 @@ const Contact = () => {
             <Card className="p-6 bg-card">
               <div className="flex items-start space-x-4">
                 <div className="bg-legal-gold rounded-full p-3">
-                  <svg className="w-6 h-6 text-legal-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-legal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-playfair font-semibold text-legal-dark mb-2">Email</h3>
+                  <h3 className="text-lg font-playfair font-semibold text-legal-dark mb-2">E-mail</h3>
                   <p className="font-montserrat text-muted-foreground">
-                    contato@mirandacarvalho.adv.br<br />
-                    atendimento@mirandacarvalho.adv.br
+                    mirandaecarvalho.advogados@gmail.com
                   </p>
                 </div>
               </div>
@@ -134,17 +160,16 @@ const Contact = () => {
             <Card className="p-6 bg-card">
               <div className="flex items-start space-x-4">
                 <div className="bg-legal-gold rounded-full p-3">
-                  <svg className="w-6 h-6 text-legal-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-legal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
                   <h3 className="text-lg font-playfair font-semibold text-legal-dark mb-2">Horário de Atendimento</h3>
-                  <p className="font-montserrat text-muted-foreground">
-                    Segunda a Sexta: 8h às 18h<br />
-                    Sábados: 8h às 12h<br />
-                    Plantão: 24h (emergências)
-                  </p>
+                  <div className="font-montserrat text-muted-foreground space-y-1">
+                    <p>Segunda a sexta: 10h às 18h</p>
+                    <p>Plantão: 24h (emergências como flagrantes, risco iminente à segurança de alguém, etc.)</p>
+                  </div>
                 </div>
               </div>
             </Card>
@@ -220,7 +245,7 @@ const Contact = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-legal-gold hover:bg-legal-gold/90 text-legal-dark font-montserrat font-semibold py-3"
+                className="w-full bg-legal-gold hover:bg-legal-gold/90 text-legal-light font-montserrat font-semibold py-3"
               >
                 {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
               </Button>
