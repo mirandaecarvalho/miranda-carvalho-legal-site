@@ -8,35 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Miranda & Carvalho Brand Colors */
+    --brand-primary: 214 55% 18%; /* #1A223E - Azul profundo */
+    --brand-secondary: 30 14% 95%; /* #F4F2F1 - Tom claro */
+    --brand-gold: 38 88% 55%; /* Dourado elegante para acentos */
+    
+    /* Semantic Colors */
+    --background: 30 14% 95%; /* Brand secondary as default background */
+    --foreground: 214 55% 18%; /* Brand primary as default text */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 214 55% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 214 55% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 214 55% 18%; /* Brand primary */
+    --primary-foreground: 30 14% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 30 14% 95%; /* Brand secondary */
+    --secondary-foreground: 214 55% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 30 8% 90%;
+    --muted-foreground: 214 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 38 88% 55%; /* Brand gold */
+    --accent-foreground: 214 55% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 214 55% 18%;
 
     --radius: 0.5rem;
+    
+    /* Legal Site Specific Colors */
+    --legal-dark: 214 55% 18%; /* #1A223E */
+    --legal-light: 30 14% 95%; /* #F4F2F1 */
+    --legal-gold: 38 88% 55%;
+    
+    /* Fonts */
+    --font-heading: 'Playfair Display', serif; /* Similar to HARMONY */
+    --font-body: 'Montserrat', sans-serif;
+    --font-formal: 'Times New Roman', serif;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +116,60 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Smooth animations */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  /* Legal-specific styles */
+  .legal-gradient {
+    background: linear-gradient(135deg, hsl(var(--legal-dark)) 0%, hsl(var(--legal-dark) / 0.9) 100%);
+  }
+
+  .legal-shadow {
+    box-shadow: 0 10px 40px -10px hsl(var(--legal-dark) / 0.3);
+  }
+
+  .legal-text-shadow {
+    text-shadow: 0 2px 4px hsl(var(--legal-dark) / 0.3);
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

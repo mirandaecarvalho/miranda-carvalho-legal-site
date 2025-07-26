@@ -18,6 +18,13 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'heading': ['var(--font-heading)'],
+				'body': ['var(--font-body)'],
+				'formal': ['var(--font-formal)'],
+				'playfair': ['Playfair Display', 'serif'],
+				'montserrat': ['Montserrat', 'sans-serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +68,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				'legal': {
+					'dark': 'hsl(var(--legal-dark))',
+					'light': 'hsl(var(--legal-light))',
+					'gold': 'hsl(var(--legal-gold))'
 				}
 			},
 			borderRadius: {
