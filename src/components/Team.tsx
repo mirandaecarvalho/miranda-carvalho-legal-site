@@ -11,6 +11,11 @@ const teamMembers = [{
   oab: "OAB/RJ 254436",
   photo: mirandaPhoto,
   description: "Sócio-fundador, especialista em Ciências Penais, Direitos Humanos e Movimentos Sociais. Graduado pela UNIFAA. Experiência em casos complexos como Tribunal do Júri, Sustentações Orais e Audiências concentradas. Vice-presidente da Comissão de Direitos Humanos da 7ª Subseção da OAB/RJ e membro da Comissão de Direitos Humanos da Seccional do Rio de Janeiro."
+}, {
+  name: "Thalita Chaves",
+  oab: "ESTAGIÁRIA",
+  photo: "/lovable-uploads/9ff744af-b9e4-406b-90a0-7801987ba8e9.png",
+  description: "Estagiária de Direito. Estudante do 6º Período do Direito na UNIFAA/RJ. Amante de Direito do Trabalho e Cível. Dedicada e comprometida com o aprendizado jurídico, demonstra excepcional interesse pela área trabalhista e civilística, contribuindo ativamente para o desenvolvimento das atividades do escritório com responsabilidade e profissionalismo."
 }];
 const Team = () => {
   return <section id="equipe" className="py-20 bg-background">
@@ -25,7 +30,7 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => <Card key={index} className="p-8 bg-card hover:shadow-lg transition-all duration-300 text-center">
               <div className="mb-6">
                 <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full mx-auto object-cover object-top border-4 border-legal-gray" />
