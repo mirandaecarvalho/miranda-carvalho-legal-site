@@ -28,7 +28,7 @@ const Team = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => <Card key={index} className="p-8 bg-card hover:shadow-lg transition-all duration-300 text-center">
               <div className="mb-6">
-                <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-legal-gold" />
+                <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full mx-auto object-cover object-top border-4 border-legal-gray" />
               </div>
               
               <h3 className="text-2xl font-playfair font-semibold text-legal-dark mb-2">
