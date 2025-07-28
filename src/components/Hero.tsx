@@ -28,14 +28,14 @@ const Hero = () => {
             
             <Button onClick={() => document.getElementById('sobre')?.scrollIntoView({
             behavior: 'smooth'
-          })} variant="outline" size="lg" className="border-legal-light text-legal-light hover:bg-legal-light hover:text-legal-dark font-montserrat font-semibold px-8 py-3 text-lg">
+          })} variant="outline" size="lg" className="border-legal-gray text-legal-gray hover:bg-legal-gray hover:text-legal-light font-montserrat font-semibold px-8 py-3 text-lg">
               Conheça Nosso Trabalho
             </Button>
           </div>
           
           <div className="mt-8 flex justify-center">
             <a 
-              href="https://wa.me/5524981340717" 
+              href="https://wa.me/5524981013461?text=Ol%C3%A1,%20vim%20pelo%20site." 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-montserrat font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
