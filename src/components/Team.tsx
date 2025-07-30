@@ -124,9 +124,9 @@ const Team = () => {
           </div>
           
           <div className="flex justify-center">
-            <Card className="p-12 bg-gradient-to-br from-legal-dark to-legal-dark/90 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 max-w-md">
+            <Card className="p-16 bg-gradient-to-br from-legal-dark to-legal-dark/90 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 max-w-lg w-full">
               <div className="text-center">
-                <div className="mb-8 relative">
+                <div className="mb-10 relative">
                   <div className="absolute inset-0 bg-legal-gold/20 rounded-lg blur-xl"></div>
                   <img 
                     src="/lovable-uploads/1c60d22c-4cd0-4b93-8e74-a2be2b171269.png" 
@@ -135,9 +135,9 @@ const Team = () => {
                   />
                 </div>
                 
-                <div className="border-t border-legal-gold/30 pt-6">
-                  <p className="text-legal-light font-montserrat text-sm leading-relaxed">
-                    Parceria estratégica em consultoria jurídica especializada, ampliando nossos serviços com excelência e expertise.
+                <div className="border-t border-legal-gold/30 pt-8">
+                  <p className="text-legal-light font-montserrat text-base leading-relaxed">
+                    Parceria estratégica especializada em <span className="text-legal-gold font-semibold">Direito do Trabalho</span>, oferecendo consultoria jurídica de excelência e ampliando nossos serviços com expertise consolidada na área trabalhista.
                   </p>
                 </div>
               </div>
