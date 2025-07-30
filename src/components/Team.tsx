@@ -35,38 +35,80 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {teamMembers.map((member, index) => <Card key={index} className="p-8 bg-card hover:shadow-lg transition-all duration-300 text-center">
-              <div className="mb-6">
-                <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full mx-auto object-cover object-top border-4 border-legal-gray" />
-              </div>
-              
-              <h3 className="text-2xl font-playfair font-semibold text-legal-dark mb-2">
-                {member.name}
-              </h3>
-              
-              <p className="text-legal-gold font-montserrat font-medium mb-4">
-                {member.oab}
-              </p>
-              
-              <p className="font-formal text-muted-foreground leading-relaxed">
-                {member.description}
-              </p>
+        <div className="max-w-6xl mx-auto">
+          {/* First row with 3 members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {teamMembers.slice(0, 3).map((member, index) => (
+              <Card key={index} className="p-8 bg-card hover:shadow-lg transition-all duration-300 text-center">
+                <div className="mb-6">
+                  <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full mx-auto object-cover object-top border-4 border-legal-gray" />
+                </div>
+                
+                <h3 className="text-2xl font-playfair font-semibold text-legal-dark mb-2">
+                  {member.name}
+                </h3>
+                
+                <p className="text-legal-gold font-montserrat font-medium mb-4">
+                  {member.oab}
+                </p>
+                
+                <p className="font-formal text-muted-foreground leading-relaxed">
+                  {member.description}
+                </p>
 
-              <div className="mt-6 flex justify-center space-x-4">
-                <a href="#" className="text-legal-dark hover:text-legal-gold transition-colors" aria-label="LinkedIn">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" />
-                  </svg>
-                </a>
-                <a href="#" className="text-legal-dark hover:text-legal-gold transition-colors" aria-label="Email">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                  </svg>
-                </a>
-              </div>
-            </Card>)}
+                <div className="mt-6 flex justify-center space-x-4">
+                  <a href="#" className="text-legal-dark hover:text-legal-gold transition-colors" aria-label="LinkedIn">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" />
+                    </svg>
+                  </a>
+                  <a href="#" className="text-legal-dark hover:text-legal-gold transition-colors" aria-label="Email">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                  </a>
+                </div>
+              </Card>
+            ))}
+          </div>
+          
+          {/* Second row with Thalita centered */}
+          <div className="flex justify-center">
+            {teamMembers.slice(3).map((member, index) => (
+              <Card key={index + 3} className="p-8 bg-card hover:shadow-lg transition-all duration-300 text-center max-w-md">
+                <div className="mb-6">
+                  <img src={member.photo} alt={member.name} className="w-32 h-32 rounded-full mx-auto object-cover object-top border-4 border-legal-gray" />
+                </div>
+                
+                <h3 className="text-2xl font-playfair font-semibold text-legal-dark mb-2">
+                  {member.name}
+                </h3>
+                
+                <p className="text-legal-gold font-montserrat font-medium mb-4">
+                  {member.oab}
+                </p>
+                
+                <p className="font-formal text-muted-foreground leading-relaxed">
+                  {member.description}
+                </p>
+
+                <div className="mt-6 flex justify-center space-x-4">
+                  <a href="#" className="text-legal-dark hover:text-legal-gold transition-colors" aria-label="LinkedIn">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.332V2.298C19 1.581 18.402 1 17.668 1z" />
+                    </svg>
+                  </a>
+                  <a href="#" className="text-legal-dark hover:text-legal-gold transition-colors" aria-label="Email">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                  </a>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">
