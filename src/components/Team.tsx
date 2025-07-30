@@ -111,6 +111,40 @@ const Team = () => {
           </div>
         </div>
 
+        {/* Escritórios Parceiros Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-playfair font-bold text-legal-dark mb-4">
+              Escritórios Parceiros
+            </h3>
+            <div className="w-20 h-1 bg-legal-gold mx-auto mb-6"></div>
+            <p className="text-lg font-montserrat text-muted-foreground max-w-xl mx-auto">
+              Trabalhamos em parceria com escritórios renomados para oferecer um atendimento ainda mais especializado.
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <Card className="p-12 bg-gradient-to-br from-legal-dark to-legal-dark/90 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 max-w-md">
+              <div className="text-center">
+                <div className="mb-8 relative">
+                  <div className="absolute inset-0 bg-legal-gold/20 rounded-lg blur-xl"></div>
+                  <img 
+                    src="/lovable-uploads/1c60d22c-4cd0-4b93-8e74-a2be2b171269.png" 
+                    alt="Pizette Corrêa - Advocacia e Consultoria Jurídica" 
+                    className="relative w-full h-auto object-contain filter brightness-110"
+                  />
+                </div>
+                
+                <div className="border-t border-legal-gold/30 pt-6">
+                  <p className="text-legal-light font-montserrat text-sm leading-relaxed">
+                    Parceria estratégica em consultoria jurídica especializada, ampliando nossos serviços com excelência e expertise.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+
         <div className="text-center mt-12">
           <Card className="max-w-2xl mx-auto p-8 bg-legal-light border-legal-gold border">
             <h3 className="text-2xl font-playfair font-semibold text-legal-dark mb-4">
