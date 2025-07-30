@@ -12,6 +12,11 @@ const teamMembers = [{
   photo: mirandaPhoto,
   description: "Sócio-fundador, especialista em Ciências Penais, Direitos Humanos e Movimentos Sociais. Graduado pela UNIFAA. Experiência em casos complexos como Tribunal do Júri, Sustentações Orais e Audiências concentradas. Vice-presidente da Comissão de Direitos Humanos da 7ª Subseção da OAB/RJ e membro da Comissão de Direitos Humanos da Seccional do Rio de Janeiro."
 }, {
+  name: "Dra. Victoria Penna",
+  oab: "ADVOGADA ASSOCIADA | OAB/RJ 250715",
+  photo: "/lovable-uploads/fc6a47d9-bafc-4683-aca7-35ca95f9ad71.png",
+  description: "Advogada associada ao escritório. Especialista em Direito de Família, possui vasta experiência em processos de divórcio, guarda de menores, pensão alimentícia e união estável. Dedicada e comprometida com a defesa dos direitos familiares, atua com sensibilidade e profissionalismo em casos que envolvem questões delicadas do âmbito familiar, sempre buscando soluções eficazes e humanizadas para seus clientes."
+}, {
   name: "Thalita Chaves",
   oab: "ESTAGIÁRIA",
   photo: "/lovable-uploads/9ff744af-b9e4-406b-90a0-7801987ba8e9.png",
